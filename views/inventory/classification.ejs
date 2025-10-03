@@ -1,0 +1,11 @@
+<div class="page-container">
+  <!-- the content heading -->  
+  <% if (title) { %>
+    <h1 class="page-title"><%= title %></h1>
+  <% } %>
+
+  <section class="inventory-grid">
+    <!-- The inventory items display -->
+    <%- grid %>
+  </section>
+</div>

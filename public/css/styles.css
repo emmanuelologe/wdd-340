@@ -214,3 +214,61 @@ footer {
         left: 40px;
     }
 }
+
+/* Container setup */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Title styling */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #023047; /* your primary blue */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Inventory grid */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Card style (applies if grid output uses <div> or <article> per item) */
+.inventory-grid .card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inventory-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Card image */
+.inventory-grid .card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+/* Card text */
+.inventory-grid .card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #219ebc; /* secondary blue */
+}
+
+.inventory-grid .card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
