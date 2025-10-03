@@ -43,3 +43,18 @@ const host = process.env.HOST
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
+
+/* ***********************
+ * Error Handling Routes
+ *************************/
+
+// 404 Not Found handler
+app.use((req, res, next) => {
+  const err = new Error("Sorry, the page you are looking for does not exist.")
+  err.status = 404
+  next(err)
+})
+
+// Global error handler
+const errorHandler = require("./middleware/errorHandler")
+app.use(errorHandler)

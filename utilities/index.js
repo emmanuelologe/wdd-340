@@ -59,3 +59,30 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+
+/* ************************
+ * Build vehicle detail HTML
+ * ************************ */
+Util.buildVehicleDetail = function (data) {
+  if (!data) {
+    return "<p class='notice'>Vehicle not found.</p>"
+  }
+
+  // Format price & mileage
+  const price = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(data.inv_price)
+  const mileage = new Intl.NumberFormat("en-US").format(data.inv_miles)
+
+  return `
+    <section class="vehicle-detail">
+      <img src="${data.inv_image}" alt="Image of ${data.inv_make} ${data.inv_model}" class="vehicle-img" />
+      <div class="vehicle-info">
+        <h2>${data.inv_year} ${data.inv_make} ${data.inv_model}</h2>
+        <p><strong>Price:</strong> ${price}</p>
+        <p><strong>Mileage:</strong> ${mileage} miles</p>
+        <p><strong>Description:</strong> ${data.inv_description}</p>
+        <p><strong>Color:</strong> ${data.inv_color}</p>
+      </div>
+    </section>
+  `
+}
